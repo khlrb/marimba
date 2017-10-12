@@ -28,6 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:marimba-cache
 EELAYER 25 0
 EELAYER END
 $Descr A2 16535 23386 portrait
@@ -76,11 +77,11 @@ F 3 "" H 2250 1350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +9V #PWR01
+L +5V #PWR01
 U 1 1 59DE8C54
 P 2100 750
 F 0 "#PWR01" H 2100 600 50  0001 C CNN
-F 1 "+9V" H 2100 890 50  0000 C CNN
+F 1 "+5V" H 2100 890 50  0000 C CNN
 F 2 "" H 2100 750 50  0001 C CNN
 F 3 "" H 2100 750 50  0001 C CNN
 	1    2100 750 
@@ -340,11 +341,11 @@ F 3 "" H 2250 5900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +9V #PWR08
+L +5V #PWR08
 U 1 1 59DFE697
 P 2100 5300
 F 0 "#PWR08" H 2100 5150 50  0001 C CNN
-F 1 "+9V" H 2100 5440 50  0000 C CNN
+F 1 "+5V" H 2100 5440 50  0000 C CNN
 F 2 "" H 2100 5300 50  0001 C CNN
 F 3 "" H 2100 5300 50  0001 C CNN
 	1    2100 5300
@@ -593,11 +594,11 @@ F 3 "" H 2250 10400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +9V #PWR015
+L +5V #PWR015
 U 1 1 59DFFF63
 P 2100 9800
 F 0 "#PWR015" H 2100 9650 50  0001 C CNN
-F 1 "+9V" H 2100 9940 50  0000 C CNN
+F 1 "+5V" H 2100 9940 50  0000 C CNN
 F 2 "" H 2100 9800 50  0001 C CNN
 F 3 "" H 2100 9800 50  0001 C CNN
 	1    2100 9800
@@ -846,11 +847,11 @@ F 3 "" H 2250 14950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +9V #PWR022
+L +5V #PWR022
 U 1 1 59E0002F
 P 2100 14350
 F 0 "#PWR022" H 2100 14200 50  0001 C CNN
-F 1 "+9V" H 2100 14490 50  0000 C CNN
+F 1 "+5V" H 2100 14490 50  0000 C CNN
 F 2 "" H 2100 14350 50  0001 C CNN
 F 3 "" H 2100 14350 50  0001 C CNN
 	1    2100 14350
@@ -1107,6 +1108,70 @@ IN14
 Text Label 1400 20400 0    60   ~ 0
 IN15
 Text Label 1400 20500 0    60   ~ 0
+IN16
+Text Label 800  1050 2    60   ~ 0
+IN1
+Text Label 2650 1150 0    60   ~ 0
+PRE1
+Text Label 2650 2350 0    60   ~ 0
+PRE2
+Text Label 800  2250 2    60   ~ 0
+IN2
+Text Label 800  3300 2    60   ~ 0
+IN3
+Text Label 2650 3400 0    60   ~ 0
+PRE3
+Text Label 2650 4400 0    60   ~ 0
+PRE4
+Text Label 800  4300 2    60   ~ 0
+IN4
+Text Label 800  5600 2    60   ~ 0
+IN5
+Text Label 2650 5700 0    60   ~ 0
+PRE5
+Text Label 2650 6900 0    60   ~ 0
+PRE6
+Text Label 800  6800 2    60   ~ 0
+IN6
+Text Label 2650 7950 0    60   ~ 0
+PRE7
+Text Label 2650 8950 0    60   ~ 0
+PRE8
+Text Label 2650 10200 0    60   ~ 0
+PRE9
+Text Label 2650 11400 0    60   ~ 0
+PRE10
+Text Label 2650 12450 0    60   ~ 0
+PRE11
+Text Label 2650 13450 0    60   ~ 0
+PRE12
+Text Label 2650 14750 0    60   ~ 0
+PRE13
+Text Label 2650 15950 0    60   ~ 0
+PRE14
+Text Label 2650 17000 0    60   ~ 0
+PRE15
+Text Label 2650 18000 0    60   ~ 0
+PRE16
+Text Label 800  7850 2    60   ~ 0
+IN7
+Text Label 800  8850 2    60   ~ 0
+IN8
+Text Label 800  10100 2    60   ~ 0
+IN9
+Text Label 800  11300 2    60   ~ 0
+IN10
+Text Label 800  12350 2    60   ~ 0
+IN11
+Text Label 800  13350 2    60   ~ 0
+IN12
+Text Label 800  14650 2    60   ~ 0
+IN13
+Text Label 800  15850 2    60   ~ 0
+IN14
+Text Label 800  16900 2    60   ~ 0
+IN15
+Text Label 800  17900 2    60   ~ 0
 IN16
 Wire Wire Line
 	950  1050 950  1100
@@ -1609,68 +1674,177 @@ Wire Wire Line
 	1300 20500 1400 20500
 Wire Wire Line
 	1300 20400 1400 20400
-Text Label 800  1050 2    60   ~ 0
-IN1
-Text Label 2650 1150 0    60   ~ 0
+Text Notes 1000 750  0    60   ~ 0
+PREAMPS
+Text Notes 750  18800 0    60   ~ 0
+INPUT
+$Comp
+L HCF4067B U5
+U 1 1 59DF883A
+P 7350 2650
+F 0 "U5" H 7350 2650 50  0000 C CNN
+F 1 "HCF4067B" H 7350 2450 50  0000 C CNN
+F 2 "" H 7350 2650 50  0001 C CNN
+F 3 "" H 7350 2650 50  0001 C CNN
+	1    7350 2650
+	1    0    0    -1  
+$EndComp
+Text Label 6650 2900 2    60   ~ 0
 PRE1
-Text Label 2650 2350 0    60   ~ 0
+Text Label 6650 2800 2    60   ~ 0
 PRE2
-Text Label 800  2250 2    60   ~ 0
-IN2
-Text Label 800  3300 2    60   ~ 0
-IN3
-Text Label 2650 3400 0    60   ~ 0
+Text Label 6650 2700 2    60   ~ 0
 PRE3
-Text Label 2650 4400 0    60   ~ 0
+Text Label 6650 2600 2    60   ~ 0
 PRE4
-Text Label 800  4300 2    60   ~ 0
-IN4
-Text Label 800  5600 2    60   ~ 0
-IN5
-Text Label 2650 5700 0    60   ~ 0
+Text Label 6650 2500 2    60   ~ 0
 PRE5
-Text Label 2650 6900 0    60   ~ 0
+Text Label 6650 2400 2    60   ~ 0
 PRE6
-Text Label 800  6800 2    60   ~ 0
-IN6
-Text Label 2650 7950 0    60   ~ 0
+Text Label 6650 2300 2    60   ~ 0
 PRE7
-Text Label 2650 8950 0    60   ~ 0
+Text Label 6650 2200 2    60   ~ 0
 PRE8
-Text Label 2650 10200 0    60   ~ 0
+Text Label 8050 2200 0    60   ~ 0
 PRE9
-Text Label 2650 11400 0    60   ~ 0
+Text Label 8050 2300 0    60   ~ 0
 PRE10
-Text Label 2650 12450 0    60   ~ 0
+Text Label 8050 2400 0    60   ~ 0
 PRE11
-Text Label 2650 13450 0    60   ~ 0
+Text Label 8050 2500 0    60   ~ 0
 PRE12
-Text Label 2650 14750 0    60   ~ 0
+Text Label 8050 2600 0    60   ~ 0
 PRE13
-Text Label 2650 15950 0    60   ~ 0
+Text Label 8050 2700 0    60   ~ 0
 PRE14
-Text Label 2650 17000 0    60   ~ 0
+Text Label 8050 2800 0    60   ~ 0
 PRE15
-Text Label 2650 18000 0    60   ~ 0
+Text Label 8050 2900 0    60   ~ 0
 PRE16
-Text Label 800  7850 2    60   ~ 0
-IN7
-Text Label 800  8850 2    60   ~ 0
-IN8
-Text Label 800  10100 2    60   ~ 0
-IN9
-Text Label 800  11300 2    60   ~ 0
-IN10
-Text Label 800  12350 2    60   ~ 0
-IN11
-Text Label 800  13350 2    60   ~ 0
-IN12
-Text Label 800  14650 2    60   ~ 0
-IN13
-Text Label 800  15850 2    60   ~ 0
-IN14
-Text Label 800  16900 2    60   ~ 0
-IN15
-Text Label 800  17900 2    60   ~ 0
-IN16
+$Comp
+L Earth #PWR030
+U 1 1 59DF9A9A
+P 6650 3300
+F 0 "#PWR030" H 6650 3050 50  0001 C CNN
+F 1 "Earth" H 6650 3150 50  0001 C CNN
+F 2 "" H 6650 3300 50  0001 C CNN
+F 3 "" H 6650 3300 50  0001 C CNN
+	1    6650 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 3200 6650 3200
+Wire Wire Line
+	6650 3200 6650 3300
+Wire Wire Line
+	6650 2900 6800 2900
+Wire Wire Line
+	6800 2800 6650 2800
+Wire Wire Line
+	6650 2700 6800 2700
+Wire Wire Line
+	6800 2600 6650 2600
+Wire Wire Line
+	6650 2500 6800 2500
+Wire Wire Line
+	6800 2400 6650 2400
+Wire Wire Line
+	6650 2300 6800 2300
+Wire Wire Line
+	6800 2200 6650 2200
+Wire Wire Line
+	7900 2200 8050 2200
+Wire Wire Line
+	7900 2300 8050 2300
+Wire Wire Line
+	8050 2400 7900 2400
+Wire Wire Line
+	7900 2500 8050 2500
+Wire Wire Line
+	8050 2600 7900 2600
+Wire Wire Line
+	7900 2700 8050 2700
+Wire Wire Line
+	8050 2800 7900 2800
+Wire Wire Line
+	8050 2900 7900 2900
+Text Notes 7050 1700 0    60   ~ 0
+DEMUX
+$Comp
+L +5V #PWR031
+U 1 1 59DFBF4A
+P 8050 1900
+F 0 "#PWR031" H 8050 1750 50  0001 C CNN
+F 1 "+5V" H 8050 2040 50  0000 C CNN
+F 2 "" H 8050 1900 50  0001 C CNN
+F 3 "" H 8050 1900 50  0001 C CNN
+	1    8050 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 2100 8050 2100
+Wire Wire Line
+	8050 2100 8050 1900
+Wire Wire Line
+	8700 1800 8700 4250
+Wire Wire Line
+	9300 1800 8700 1800
+$Comp
+L ATMEGA328P-MMH U6
+U 1 1 59DFCF06
+P 10300 2400
+F 0 "U6" H 9550 3650 50  0000 L BNN
+F 1 "ATMEGA328P-MMH" H 10650 1000 50  0000 L BNN
+F 2 "MLF/QFN28" H 10300 2400 50  0001 C CIN
+F 3 "" H 10300 2400 50  0001 C CNN
+	1    10300 2400
+	-1   0    0    1   
+$EndComp
+$Comp
+L +5V #PWR032
+U 1 1 59DFD3D5
+P 9100 2050
+F 0 "#PWR032" H 9100 1900 50  0001 C CNN
+F 1 "+5V" H 9100 2190 50  0000 C CNN
+F 2 "" H 9100 2050 50  0001 C CNN
+F 3 "" H 9100 2050 50  0001 C CNN
+	1    9100 2050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9300 2050 9100 2050
+Wire Wire Line
+	7900 3200 9300 3200
+Wire Wire Line
+	8050 3500 9300 3500
+Wire Wire Line
+	6800 3000 6200 3000
+Wire Wire Line
+	6200 3000 6200 3600
+Wire Wire Line
+	6200 3600 9050 3600
+Wire Wire Line
+	9050 3600 9050 3000
+Wire Wire Line
+	9050 3000 9300 3000
+Wire Wire Line
+	8050 3500 8050 3100
+Wire Wire Line
+	8050 3100 7900 3100
+Wire Wire Line
+	6800 3100 6300 3100
+Wire Wire Line
+	6300 3100 6300 3750
+Wire Wire Line
+	6300 3750 9150 3750
+Wire Wire Line
+	9150 3750 9150 3100
+Wire Wire Line
+	9150 3100 9300 3100
+Wire Wire Line
+	9300 2350 8450 2350
+Wire Wire Line
+	8450 2350 8450 3000
+Wire Wire Line
+	8450 3000 7900 3000
 $EndSCHEMATC
